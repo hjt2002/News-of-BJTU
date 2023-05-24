@@ -3,4 +3,23 @@
         PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.example.newsofbjtu.dao.NewsMapper">
+    <select id="getNewsByRecommend" parameterType="String" resultType="List">
+        select * from miniprogram.News where recommend = #{recommend}
+    </select>
+    <select id="getNewsByType" parameterType="String" resultType="List">
+        select * from miniprogram.News where type = #{type}
+    </select>
+    <select id="getNewsByID" parameterType="String" resultType="com.example.newsofbjtu.bean.News">
+        select * from miniprogram.News where nid = #{nid}
+    </select>
+    <insert id="createNews" parameterType="String">
+        insert into miniprogram.News (nid, title, author, time,
+            picture,content,type,recommend)
+        values
+            (#{nid}, #{title}, #{author}, #{time},
+                #{picture},#{content},#{type},#{recommend})
+    </insert>
+    <delete id="deleteNews" parameterType="String">
+        delete from miniprogram.News where nid = #{nid}
+    </delete>
 </mapper>

@@ -1,7 +1,9 @@
 package com.example.newsofbjtu.dao;
 
+import com.example.newsofbjtu.bean.User;
 import org.apache.ibatis.annotations.Mapper;
 
 @Mapper
-public class UserMapper {
+public interface UserMapper {
+    User getUserByID(String uid);
 }
