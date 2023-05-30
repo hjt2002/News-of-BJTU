@@ -1,13 +1,11 @@
 package com.example.newsofbjtu.controller;
 
-import com.example.newsofbjtu.dao.CommentMapper;
+import com.example.newsofbjtu.bean.Comment;
 import com.example.newsofbjtu.service.CommentService;
 import com.example.newsofbjtu.util.JsonResult;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
 import java.util.Map;
 
 @RestController
@@ -29,7 +27,13 @@ public class CommentController {
     }
     @PostMapping("/deleteComment")
     public JsonResult deleteComment(@RequestBody Map<String,String>map){
-        String nid = map.get("nid");
+        String cid = map.get("cid");
+        return commentService.deleteComment(cid);
+    }
+    @GetMapping("getComment")
+    public JsonResult<List<Comment>>getComment(@RequestParam String nid){
         return commentService.getComment(nid);
     }
+
+
 }

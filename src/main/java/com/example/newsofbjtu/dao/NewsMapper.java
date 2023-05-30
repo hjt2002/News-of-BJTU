@@ -8,6 +8,7 @@ import java.util.List;
 
 @Mapper
 public interface NewsMapper {
+
     // 根据是否推荐获取新闻
     List<News>getNewsByRecommend(String recommend);
     // 通过新闻类型获取新闻

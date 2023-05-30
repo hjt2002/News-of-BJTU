@@ -6,6 +6,8 @@ import com.example.newsofbjtu.util.JsonResult;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Service
 public class CollectionService {
     final
@@ -28,10 +30,10 @@ public class CollectionService {
             return new JsonResult("0","取消收藏成功");
         }
     }
-    public JsonResult<Collection>getCollection(String uid){
-        Collection collection = collectionMapper.getCollection(uid);
-        if(collection!=null){
-            return new JsonResult<>(collection);
+    public JsonResult<List<Collection>>getCollection(String uid){
+        List<Collection>list= collectionMapper.getCollection(uid);
+        if(!list.isEmpty()){
+            return new JsonResult<>(list);
         }else {
             return new JsonResult<>("0","收藏查询失败");
         }

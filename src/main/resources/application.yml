@@ -5,7 +5,7 @@ spring:
     password: 123456
 
 server:
-  port: 8181
+  port: 8080
 
 mybatis:
 #  config-location: classpath:mybatis/mybatis-config.xml

@@ -41,11 +41,14 @@ public class NewsController {
         String title = map.get("title");
         String author =  map.get("author");
         SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yy-MM-dd HH:mm:ss");
-        Date time = simpleDateFormat.parse(map.get("time"));
+        String tmp = map.get("time"); // 获取时间字符串
+//        System.out.println(tmp.getClass());
+        Date time = simpleDateFormat.parse(tmp); // 将字符串转换成Date格式
         String picture = map.get("picture");
         String content = map.get("content");
         String type = map.get("type");
         String recommend = map.get("recommend");
+
         return newsService.createNews(nid,title,author,time,
                 picture,content,type,recommend);
     }

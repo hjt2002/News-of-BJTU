@@ -3,7 +3,6 @@ package com.example.newsofbjtu.controller;
 import com.example.newsofbjtu.bean.User;
 import com.example.newsofbjtu.service.UserService;
 import com.example.newsofbjtu.util.JsonResult;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
@@ -17,7 +16,7 @@ public class UserController {
     }
 
     // 获取用户
-    @GetMapping
+    @GetMapping("/getUserByID")
     public JsonResult<User>getUserByID(@RequestParam String uid){
         return userService.getUserByID(uid);
     }

@@ -3,10 +3,10 @@
         PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.example.newsofbjtu.dao.CollectionMapper">
-    <select id="getCollection" parameterType="Integer" resultType="com.example.newsofbjtu.bean.Collection">
+    <select id="getCollection" parameterType="String" resultType="com.example.newsofbjtu.bean.Collection">
         select * from miniprogram.Collection where uid=#{uid}
     </select>
-    <insert id="createCollection" parameterType="Integer">
+    <insert id="createCollection" parameterType="String">
         insert into miniprogram.Collection (uid,nid)
             values (#{uid},#{nid})
     </insert>

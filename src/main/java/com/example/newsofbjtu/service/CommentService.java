@@ -31,8 +31,8 @@ public class CommentService {
     }
     // 查询某篇文章下的所有评论
     public JsonResult<List<Comment>>getComment(String nid){
-        List<Comment> list = commentMapper.getComment(nid);
-        if(list!=null){
+        List<Comment>list = commentMapper.getComment(nid);
+        if(list != null){
             return new JsonResult<>(list);
         }else {
             return new JsonResult<>("0","未找到该评论");

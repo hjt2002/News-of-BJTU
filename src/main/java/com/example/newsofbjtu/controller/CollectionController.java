@@ -4,6 +4,8 @@ import com.example.newsofbjtu.bean.Collection;
 import com.example.newsofbjtu.service.CollectionService;
 import com.example.newsofbjtu.util.JsonResult;
 import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
 import java.util.Map;
 
 @RestController
@@ -28,7 +30,7 @@ public class CollectionController {
         return collectionService.deleteCollection(uid,nid);
     }
     @GetMapping("/getCollection")
-    public JsonResult<Collection>getCollection(@RequestParam String uid){
+    public JsonResult<List<Collection>>getCollection(@RequestParam String uid){
         return collectionService.getCollection(uid);
     }
 }
