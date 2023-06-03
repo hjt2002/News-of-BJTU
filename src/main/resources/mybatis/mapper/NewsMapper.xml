@@ -22,4 +22,7 @@
     <delete id="deleteNews" parameterType="String">
         delete from miniprogram.News where nid = #{nid}
     </delete>
+    <select id="getImageByID" parameterType="String">
+        select picture from miniprogram.News where nid=#{nid}
+    </select>
 </mapper>

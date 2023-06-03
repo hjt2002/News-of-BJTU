@@ -20,4 +20,5 @@ public interface NewsMapper {
                         String picture,String content,String type,String recommend);
     // 删除新闻
     int deleteNews(String nid);
+    String getImageByID(String nid);
 }

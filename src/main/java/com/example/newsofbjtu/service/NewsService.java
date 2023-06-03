@@ -2,9 +2,13 @@ package com.example.newsofbjtu.service;
 
 import com.example.newsofbjtu.bean.News;
 import com.example.newsofbjtu.dao.NewsMapper;
+import com.example.newsofbjtu.util.ImageUtil;
 import com.example.newsofbjtu.util.JsonResult;
+import org.springframework.core.io.ClassPathResource;
+import org.springframework.core.io.Resource;
 import org.springframework.stereotype.Service;
 
+import java.io.IOException;
 import java.util.Date;
 import java.util.List;
 
@@ -53,6 +57,18 @@ public class NewsService {
             return new JsonResult("1","新闻删除成功");
         }else {
             return new JsonResult("0","新闻删除失败");
+        }
+    }
+    public JsonResult<String> getImageByID(String nid) throws IOException {
+        // 在数据库中获取该新闻对应的图片路径
+        String pictureUrl = newsMapper.getImageByID(nid);
+        if(!pictureUrl.isEmpty()){
+            Resource resource = new ClassPathResource(pictureUrl);
+            String relative_path = resource.getFile().getPath();
+            String base64Str = ImageUtil.getImageAsBase64String(relative_path);
+            return new JsonResult<>(base64Str);
+        }else {
+            return new JsonResult<>("0","图片查询失败");
         }
     }
 }
