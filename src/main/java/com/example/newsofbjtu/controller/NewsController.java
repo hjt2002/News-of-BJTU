@@ -2,10 +2,7 @@ package com.example.newsofbjtu.controller;
 
 import com.example.newsofbjtu.bean.News;
 import com.example.newsofbjtu.service.NewsService;
-import com.example.newsofbjtu.util.ImageUtil;
 import com.example.newsofbjtu.util.JsonResult;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.web.bind.annotation.*;
 
 import java.io.IOException;
