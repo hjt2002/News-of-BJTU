@@ -3,6 +3,9 @@ spring:
     url:  jdbc:mysql://81.68.234.49:3306
     username: miniprogram
     password: 123456
+  mvc:
+    pathmatch:
+      matching-strategy: ant_path_matcher
 
 server:
   port: 8080
