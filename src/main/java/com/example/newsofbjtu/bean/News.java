@@ -5,7 +5,7 @@ import java.util.Date;
 
 public class News {
 
-  private String nid;
+  private int nid;
   private String title;
   private String author;
   private Date time;
@@ -15,11 +15,11 @@ public class News {
   private String recommend;
 
 
-  public String getNid() {
+  public int getNid() {
     return nid;
   }
 
-  public void setNid(String nid) {
+  public void setNid(int nid) {
     this.nid = nid;
   }
 

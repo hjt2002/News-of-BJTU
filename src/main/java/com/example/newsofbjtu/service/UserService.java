@@ -15,7 +15,7 @@ public class UserService {
     }
 
     // 根据用户ID获取用户信息
-    public JsonResult<User>getUserByID(String uid){
+    public JsonResult<User>getUserByID(int uid){
         User user = userMapper.getUserByID(uid);
         if(user != null){
             // 得到用户

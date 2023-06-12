@@ -7,7 +7,7 @@ import java.util.List;
 
 @Mapper
 public interface CollectionMapper {
-    int createCollection(String uid,String nid);
+    int createCollection(int uid,int nid);
     List<Collection> getCollection(String uid);
     int deleteCollection(String uid,String nid);
 }

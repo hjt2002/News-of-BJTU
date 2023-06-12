@@ -26,17 +26,22 @@ public class NewsController {
     public JsonResult<List<News>> getNewsByRecommend(@RequestParam String recommend){
         return newsService.getNewsByRecommend(recommend);
     }
+    @GetMapping("/getNewsByRandom")
+    public JsonResult<List<News>>getNewsByRandom(){
+        return newsService.getNewsByRandom();
+    }
+
     @GetMapping("/getNewsByType")
     public JsonResult<List<News>>getNewsByType(@RequestParam String type){
         return newsService.getNewsByType(type);
     }
     @GetMapping("/getNewsByID")
-    public JsonResult<News>getNewsByID(@RequestParam String nid){
+    public JsonResult<News>getNewsByID(@RequestParam int nid){
         return newsService.getNewsByID(nid);
     }
     @PostMapping("/createNews")
     public JsonResult createNews(@RequestBody Map<String,String> map) throws ParseException {
-        String nid = map.get("nid");
+        int nid = Integer.parseInt(map.get("nid"));
         String title = map.get("title");
         String author =  map.get("author");
         SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yy-MM-dd HH:mm:ss");
@@ -53,7 +58,7 @@ public class NewsController {
     }
     // 获取图片
     @GetMapping("/getImage")
-    public JsonResult<String>getImageByID(@RequestParam String nid) throws IOException {
+    public JsonResult<String>getImageByID(@RequestParam int nid) throws IOException {
         return newsService.getImageByID(nid);
     }
 

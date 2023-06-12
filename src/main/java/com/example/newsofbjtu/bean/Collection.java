@@ -3,24 +3,24 @@ package com.example.newsofbjtu.bean;
 
 public class Collection {
 
-  private String uid;
-  private String nid;
+  private int uid;
+  private int nid;
 
 
-  public String getUid() {
+  public int getUid() {
     return uid;
   }
 
-  public void setUid(String uid) {
+  public void setUid(int uid) {
     this.uid = uid;
   }
 
 
-  public String getNid() {
+  public int getNid() {
     return nid;
   }
 
-  public void setNid(String nid) {
+  public void setNid(int nid) {
     this.nid = nid;
   }
 

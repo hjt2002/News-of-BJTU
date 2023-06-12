@@ -16,7 +16,7 @@ public class CollectionService {
     public CollectionService(CollectionMapper collectionMapper) {
         this.collectionMapper = collectionMapper;
     }
-    public JsonResult createCollection(String uid,String nid){
+    public JsonResult createCollection(int uid,int nid){
         if(collectionMapper.createCollection(uid,nid)!=0){
             return new JsonResult("1","收藏成功");
         }else {

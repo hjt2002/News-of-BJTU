@@ -19,8 +19,8 @@ public class CollectionController {
     }
     @PostMapping("/createCollection")
     public JsonResult createCollection(@RequestBody Map<String,String> map){
-        String uid = map.get("uid");
-        String nid = map.get("nid");
+        int uid = Integer.parseInt(map.get("uid"));
+        int nid = Integer.parseInt(map.get("nid"));
         return collectionService.createCollection(uid,nid);
     }
     @PostMapping("/deleteCollection")

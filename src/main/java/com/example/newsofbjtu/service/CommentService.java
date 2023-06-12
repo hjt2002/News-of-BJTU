@@ -15,14 +15,15 @@ public class CommentService {
     public CommentService(CommentMapper commentMapper) {
         this.commentMapper = commentMapper;
     }
-    public JsonResult createComment(String cid,String uid,String nid,String text){
-        if(commentMapper.createComment(cid,uid,nid,text)!=0){
+    public JsonResult createComment(int uid,int nid,String text){
+        // 查询数据库创建自增ID
+        if(commentMapper.createComment(uid,nid,text)!=0){
             return new JsonResult("1","评论创建成功");
         }else {
             return new JsonResult("0","评论创建失败");
         }
     }
-    public JsonResult deleteComment(String cid){
+    public JsonResult deleteComment(int cid){
         if(commentMapper.deleteComment(cid)!=0){
             return new JsonResult("1","评论删除成功");
         }else{
@@ -30,7 +31,7 @@ public class CommentService {
         }
     }
     // 查询某篇文章下的所有评论
-    public JsonResult<List<Comment>>getComment(String nid){
+    public JsonResult<List<Comment>>getComment(int nid){
         List<Comment>list = commentMapper.getComment(nid);
         if(list != null){
             return new JsonResult<>(list);
