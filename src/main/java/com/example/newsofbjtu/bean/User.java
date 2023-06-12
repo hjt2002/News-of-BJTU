@@ -3,16 +3,16 @@ package com.example.newsofbjtu.bean;
 
 public class User {
 
-  private String uid;
+  private int uid;
   private String name;
   private String password;
 
 
-  public String getUid() {
+  public int getUid() {
     return uid;
   }
 
-  public void setUid(String uid) {
+  public void setUid(int uid) {
     this.uid = uid;
   }
 

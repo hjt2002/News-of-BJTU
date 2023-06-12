@@ -23,7 +23,7 @@ class NewsServiceTest {
     NewsMapper newsMapper;
     @Test
     void getImageByID() throws IOException {
-        String nid = "100001";
+         int nid = 100001;
         String path = newsMapper.getImageByID(nid);
 //        System.out.println(path);
         Resource resource = new ClassPathResource(path);

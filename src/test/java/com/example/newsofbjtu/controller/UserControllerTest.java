@@ -12,6 +12,6 @@ class UserControllerTest {
     UserService userService;
     @Test
     void getUserByID() {
-        System.out.println(userService.getUserByID("1001").toString());
+        System.out.println(userService.getUserByID(1001).toString());
     }
 }

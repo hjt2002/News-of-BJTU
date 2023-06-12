@@ -3,35 +3,35 @@ package com.example.newsofbjtu.bean;
 
 public class Comment {
 
-  private String cid;
-  private String uid;
-  private String nid;
+  private int cid;
+  private int uid;
+  private int nid;
   private String text;
 
 
-  public String getCid() {
+  public int getCid() {
     return cid;
   }
 
-  public void setCid(String cid) {
+  public void setCid(int cid) {
     this.cid = cid;
   }
 
 
-  public String getUid() {
+  public int getUid() {
     return uid;
   }
 
-  public void setUid(String uid) {
+  public void setUid(int uid) {
     this.uid = uid;
   }
 
 
-  public String getNid() {
+  public int getNid() {
     return nid;
   }
 
-  public void setNid(String nid) {
+  public void setNid(int nid) {
     this.nid = nid;
   }
 

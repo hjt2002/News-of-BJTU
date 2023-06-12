@@ -17,7 +17,7 @@ public class UserController {
 
     // 获取用户
     @GetMapping("/getUserByID")
-    public JsonResult<User>getUserByID(@RequestParam String uid){
+    public JsonResult<User>getUserByID(@RequestParam int uid){
         return userService.getUserByID(uid);
     }
 }
