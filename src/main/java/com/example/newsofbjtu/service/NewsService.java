@@ -79,4 +79,13 @@ public class NewsService {
             return new JsonResult<>("0","查询失败");
         }
     }
+
+    public String getNewsContentByID(int nid){
+        News news = newsMapper.getNewsByID(nid);
+        if(news != null){
+            return news.getContent();
+        }else {
+            return "查询新闻失败";
+        }
+    }
 }

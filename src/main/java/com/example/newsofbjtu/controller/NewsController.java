@@ -62,4 +62,9 @@ public class NewsController {
         return newsService.getImageByID(nid);
     }
 
+    @GetMapping("/getNewsContentByID")
+    public String getNewsContentByID(@RequestParam int nid){
+        return newsService.getNewsContentByID(nid);
+    }
+
 }
