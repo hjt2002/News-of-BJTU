@@ -43,9 +43,9 @@ public class NewsService {
             return new JsonResult<>("0","查询新闻失败");
         }
     }
-    public JsonResult createNews(int nid, String title, String author, Date time,
+    public JsonResult createNews(String title, String author, Date time,
                                  String picture,String content,String type,String recommend) {
-        if (newsMapper.createNews(nid, title, author, time,
+        if (newsMapper.createNews(title, author, time,
                 picture, content, type, recommend) != 0) {
             return new JsonResult("1", "新闻添加成功");
         } else {
@@ -86,6 +86,14 @@ public class NewsService {
             return news.getContent();
         }else {
             return "查询新闻失败";
+        }
+    }
+    public JsonResult<List<News>>getNews(){
+        List<News>list=newsMapper.getNews();
+        if(!list.isEmpty()){
+            return new JsonResult<>(list);
+        }else {
+            return new JsonResult<>("0","返回新闻失败");
         }
     }
 }

@@ -41,7 +41,7 @@ public class NewsController {
     }
     @PostMapping("/createNews")
     public JsonResult createNews(@RequestBody Map<String,String> map) throws ParseException {
-        int nid = Integer.parseInt(map.get("nid"));
+//        int nid = Integer.parseInt(map.get("nid"));
         String title = map.get("title");
         String author =  map.get("author");
         SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yy-MM-dd HH:mm:ss");
@@ -53,7 +53,7 @@ public class NewsController {
         String type = map.get("type");
         String recommend = map.get("recommend");
 
-        return newsService.createNews(nid,title,author,time,
+        return newsService.createNews(title,author,time,
                 picture,content,type,recommend);
     }
     // 获取图片
@@ -67,4 +67,9 @@ public class NewsController {
         return newsService.getNewsContentByID(nid);
     }
 
+    // 获取30条新闻
+    @GetMapping("/getNews")
+    public JsonResult<List<News>> getNews(){
+        return newsService.getNews();
+    }
 }

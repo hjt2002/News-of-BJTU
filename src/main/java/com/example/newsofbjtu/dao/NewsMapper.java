@@ -17,10 +17,11 @@ public interface NewsMapper {
     // 通过nid获取新闻
     News getNewsByID(int nid);
     // 添加新闻
-    int createNews(int nid, String title, String author, Date time,
+    int createNews(String title, String author, Date time,
                         String picture,String content,String type,String recommend);
     // 删除新闻
     int deleteNews(int nid);
     String getImageByID(int nid);
     List<News>getNewsByRandom();
+    List<News>getNews();
 }

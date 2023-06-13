@@ -28,4 +28,7 @@
     <select id="getNewsByRandom" resultType="com.example.newsofbjtu.bean.News">
         SELECT * FROM miniprogram.News WHERE nid >= ((SELECT MAX(nid) FROM miniprogram.News)-(SELECT MIN(nid) FROM miniprogram.News)) * RAND() + (SELECT MIN(nid) FROM miniprogram.News) limit 5;
     </select>
+    <select id="getNews" resultType="com.example.newsofbjtu.bean.News">
+        SELECT * FROM miniprogram.News limit 30
+    </select>
 </mapper>

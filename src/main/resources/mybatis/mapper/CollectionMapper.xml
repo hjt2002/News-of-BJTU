@@ -6,7 +6,7 @@
     <select id="getCollection" resultType="com.example.newsofbjtu.bean.Collection">
         select * from miniprogram.Collection where uid=#{uid}
     </select>
-    <insert id="createCollection" parameterType="String">
+    <insert id="createCollection" >
         insert into miniprogram.Collection (uid,nid)
             values (#{uid},#{nid})
     </insert>
