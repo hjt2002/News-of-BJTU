@@ -1,7 +1,6 @@
 package com.example.newsofbjtu.dao;
 
 import com.example.newsofbjtu.bean.News;
-import com.example.newsofbjtu.util.JsonResult;
 import org.apache.ibatis.annotations.Mapper;
 
 import java.util.Date;

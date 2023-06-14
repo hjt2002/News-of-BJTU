@@ -1,6 +1,7 @@
 package com.example.newsofbjtu.controller;
 
 import com.example.newsofbjtu.bean.Collection;
+import com.example.newsofbjtu.bean.News;
 import com.example.newsofbjtu.service.CollectionService;
 import com.example.newsofbjtu.util.JsonResult;
 import org.springframework.web.bind.annotation.*;
@@ -30,7 +31,7 @@ public class CollectionController {
         return collectionService.deleteCollection(uid,nid);
     }
     @GetMapping("/getCollection")
-    public JsonResult<List<Collection>>getCollection(@RequestParam String uid){
+    public JsonResult<List<News>>getCollection(@RequestParam String uid){
         return collectionService.getCollection(uid);
     }
 }

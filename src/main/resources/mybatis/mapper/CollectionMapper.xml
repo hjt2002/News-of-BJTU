@@ -13,4 +13,7 @@
     <delete id="deleteCollection">
         delete from miniprogram.Collection where uid=#{uid} and nid=#{nid}
     </delete>
+    <select id="getNewsByID" resultType="com.example.newsofbjtu.bean.News">
+        select * from miniprogram.News where nid = #{nid}
+    </select>
 </mapper>
