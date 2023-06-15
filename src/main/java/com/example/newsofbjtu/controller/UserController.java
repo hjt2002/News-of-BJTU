@@ -14,10 +14,14 @@ public class UserController {
     public UserController(UserService userService) {
         this.userService = userService;
     }
-
     // 获取用户
     @GetMapping("/getUserByID")
     public JsonResult<User>getUserByID(@RequestParam int uid){
         return userService.getUserByID(uid);
+    }
+
+    @GetMapping("/getUserByOpenId")
+    public JsonResult<User>getUserByOpenId(@RequestParam String openid){
+        return userService.getUserByOpenId(openid);
     }
 }

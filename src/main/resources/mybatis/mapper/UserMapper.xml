@@ -6,4 +6,7 @@
     <select id="getUserByID" resultType="com.example.newsofbjtu.bean.User">
         select * from miniprogram.User where uid = #{uid}
     </select>
+    <select id="getUserByOpenId" resultType="com.example.newsofbjtu.bean.User">
+        select * from miniprogram.User where openid = #{openid}
+    </select>
 </mapper>

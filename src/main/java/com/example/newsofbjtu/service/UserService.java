@@ -24,4 +24,12 @@ public class UserService {
             return new JsonResult<>("0","用户不存在");
         }
     }
+    public JsonResult<User>getUserByOpenId(String openid){
+        User user = userMapper.getUserByOpenId(openid);
+        if(user!=null){
+            return new JsonResult<>(user);
+        }else {
+            return new JsonResult<>("0","用户不存在");
+        }
+    }
 }

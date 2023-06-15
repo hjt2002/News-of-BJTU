@@ -1,11 +1,23 @@
 package com.example.newsofbjtu.bean;
 
+import lombok.Data;
 
+@Data
 public class User {
 
   private int uid;
   private String name;
   private String password;
+
+  public String getOpenid() {
+    return openid;
+  }
+
+  public void setOpenid(String openid) {
+    this.openid = openid;
+  }
+
+  private String openid;
 
 
   public int getUid() {
