@@ -31,4 +31,7 @@
     <select id="getNews" resultType="com.example.newsofbjtu.bean.News">
         SELECT * FROM miniprogram.News limit 30
     </select>
+    <select id="getNewsBySearch" resultType="com.example.newsofbjtu.bean.News">
+        SELECT * FROM miniprogram.News where content like CONCAT('%',#{searchContent},'%')
+    </select>
 </mapper>

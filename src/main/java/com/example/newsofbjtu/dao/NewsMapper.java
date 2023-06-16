@@ -23,4 +23,5 @@ public interface NewsMapper {
     String getImageByID(int nid);
     List<News>getNewsByRandom();
     List<News>getNews();
+    List<News>getNewsBySearch(String searchContent);
 }

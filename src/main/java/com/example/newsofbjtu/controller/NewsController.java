@@ -72,4 +72,9 @@ public class NewsController {
     public JsonResult<List<News>> getNews(){
         return newsService.getNews();
     }
+
+    @GetMapping("/getNewsBySearch")
+    public JsonResult<List<News>>getNewsBySearch(@RequestParam String searchContent){
+        return newsService.getNewsBySearch(searchContent);
+    }
 }
