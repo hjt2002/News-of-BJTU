@@ -32,6 +32,8 @@
         SELECT * FROM miniprogram.News limit 30
     </select>
     <select id="getNewsBySearch" resultType="com.example.newsofbjtu.bean.News">
-        SELECT * FROM miniprogram.News where content like CONCAT('%',#{searchContent},'%')
+        SELECT * FROM miniprogram.News where (content like CONCAT('%',#{searchContent},'%')
+                or author like CONCAT('%',#{searchContent},'%')
+                or title like CONCAT('%',#{searchContent},'%'))
     </select>
 </mapper>
